@@ -1,0 +1,19 @@
+{
+  "name": "oct",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "server": "webpack-dev-server"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10"
+  },
+  "dependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.10.1"
+  }
+}
