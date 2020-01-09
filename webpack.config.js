@@ -9,13 +9,27 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js'
     },
+    module: {
+        rules:[
+            {
+                test: /\.(js|jsx)$/i,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['@babel/preset-env']
+                    }
+                }
+            }
+        ]
+    },
     plugins: [
         new htmlPlugin({
             minify: {
                 removeAttributeQuotes: true
             },
             hash: true,
-            template: './src/index.html'
+            template: './public/index.html'
         })
     ],
     devServer: {
