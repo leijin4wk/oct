@@ -17,7 +17,7 @@ export default class Index extends Component {
                 params: [name, object.a],
                 Home: new Home(),
                 template: () => {
-                    return '<div><div>Hello {0}!</div><div>Hello {1}!</div><Home name=$object></Home></div>';
+                    return '<div><div>Hello {0}!</div><div>Hello {1}!</div><Oct-Home name=$object></Oct-Home></div>';
                 },
             }
         }
