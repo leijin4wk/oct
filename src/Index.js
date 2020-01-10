@@ -15,10 +15,10 @@ export default class Index extends Component {
         return function () {
             return {
                 home: new Home(),
-                propsObj:{
+                paramObj:{
                     object:object
                 },
-                octHtml:`<div><div>Hello ${name}!</div><div>Hello ${object.name}!</div><Oct-Home name={object}></Oct-Home></div>`
+                octHtml:`<div id="aa"><div>Hello ${name}!</div><div>Hello ${object.name}!</div><Oct-Home name={object}></Oct-Home></div>`
             }
         }
     }

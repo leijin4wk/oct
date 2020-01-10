@@ -1,13 +1,56 @@
 import { parse } from 'himalaya'
+
+let processHtmlTagAttributes=(item,elementObj,paramObj)=>{
+    console.log("paramObj",paramObj);
+    item.attributes.forEach(attribute=>{
+        console.log(attribute)
+
+
+
+
+    });
+};
+
+let processOctTagAttributes=(item,elementObj,param)=>{
+
+
+    item.attributes.forEach(attribute=>{
+        console.log(attribute)
+
+
+
+
+    });
+};
+
+
+
+let addEvent=(name,elementObj,func)=>{
+    if (name==="onClick") {
+        elementObj.addEventListener('click', func)
+    }
+    if (name==="onChange") {
+        elementObj.addEventListener('change', func)
+    }
+};
 class OctDocument {
     constructor() {
     }
-    render(root, component){
-        this.root=root;
-        let b=component.render()();
-        console.log(b);
-        const json = parse(b.octHtml);
-        console.log(json);
+    render(parent, component){
+        let evn=component.render()();
+        const json = parse(evn.octHtml);
+        json.forEach(item=>{
+            if (item.tagName.startsWith("oct")) {
+                console.log("自定义：",item)
+            }else{
+                console.log(item);
+                let elementObj = document.createElement(item.tagName);
+                processHtmlTagAttributes(item,elementObj,evn.paramObj);
+                item["parent"]=parent;
+                item["elementObj"]=elementObj;
+                console.log(item)
+            }
+        });
     }
 }
 
