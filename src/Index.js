@@ -6,7 +6,7 @@ export default class Index extends Component {
         super(props);
         this.state = {
             name: "index",
-            object: {a: "bbbbb", b: 2}
+            object: {name: "bbbbb", b: 2}
         }
     }
 
@@ -14,11 +14,11 @@ export default class Index extends Component {
         let {name, object} = this.state;
         return function () {
             return {
-                params: [name, object.a],
-                Home: new Home(),
-                template: () => {
-                    return '<div><div>Hello {0}!</div><div>Hello {1}!</div><Oct-Home name=$object></Oct-Home></div>';
+                home: new Home(),
+                propsObj:{
+                    object:object
                 },
+                octHtml:`<div><div>Hello ${name}!</div><div>Hello ${object.name}!</div><Oct-Home name={object}></Oct-Home></div>`
             }
         }
     }
