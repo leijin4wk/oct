@@ -1,5 +1,5 @@
 import { parse } from 'himalaya'
-
+//普通html标签属性设置
 let processHtmlTagAttributes=(item,elementObj,paramObj)=>{
     console.log("paramObj",paramObj);
     item.attributes.forEach(attribute=>{
@@ -10,8 +10,8 @@ let processHtmlTagAttributes=(item,elementObj,paramObj)=>{
 
     });
 };
-
-let processOctTagAttributes=(item,elementObj,param)=>{
+//自定义标签属性设置
+let processOctTagAttributes=(item,elementObj,param,ev)=>{
 
 
     item.attributes.forEach(attribute=>{
