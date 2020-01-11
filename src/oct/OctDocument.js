@@ -1,4 +1,6 @@
 //这个类就还模拟虚拟dom的实现
+
+//himalaya  的作用是把html字符串转换成json
 import { parse } from 'himalaya'
 //普通html标签属性设置
 let processHtmlTagAttributes=(item,elementObj,componentContext)=>{
