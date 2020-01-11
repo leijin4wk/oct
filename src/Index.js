@@ -1,4 +1,4 @@
-import Component from './Component'
+import Component from './oct/Component'
 import Home from "./Home";
 
 export default class Index extends Component {
@@ -6,19 +6,35 @@ export default class Index extends Component {
         super(props);
         this.state = {
             name: "index",
-            object: {name: "bbbbb", b: 2}
+            object: {
+                name: "world",
+                child: "oct"
+            }
         }
     }
 
+    onClickButton() {
+        this.setState({name: "oct"})
+    };
+
     render() {
+        console.log("Index render 执行了");
+        let _this = this;
         let {name, object} = this.state;
+        let onClickButton = this.onClickButton;
         return function () {
             return {
-                home: new Home(),
-                paramObj:{
-                    object:object
+                context: {
+                    home: new Home(),
+                    object: object,
+                    onClickButton: onClickButton.bind(_this),
                 },
-                octHtml:`<div id="aa"><div>Hello ${name}!</div><div>Hello ${object.name}!</div><Oct-Home name={object}></Oct-Home></div>`
+                octHtml: `<div>
+                                <div>hello ${name}</div>
+                                <div>Hello ${object.name}!</div>
+                                <button onClick="onClickButton">按钮</button>
+                                <Oct-Home name="object"/>
+                          </div>`
             }
         }
     }

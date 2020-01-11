@@ -1,19 +1,15 @@
-import Component from './Component'
+import Component from './oct/Component'
 export default class Home extends Component{
     constructor(props){
         super(props);
-        this.state={
-            name:"home"
-        }
     }
     render() {
-        let {name}=this.state;
+        let {child}=this.props;
         return function () {
             return {
-                template:()=>{
-                    return '<div>this is {name}</div>';
+                context:{
                 },
-                name
+                octHtml: `<div>this is ${child}</div>`
             }
         }
     }
