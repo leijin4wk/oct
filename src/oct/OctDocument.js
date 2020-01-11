@@ -12,6 +12,7 @@ let processHtmlTagChildren=(item,elementObj,componentContext)=>{
     let regExp = /\s*\S+?/;
     item.children.forEach(son=>{
         if (son.type==="text"){
+            //去除空白
             if (regExp.test(son.content)) {
                 elementObj.innerText = son.content;
             }
