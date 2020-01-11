@@ -38,7 +38,7 @@ let processOctTag=(octItem,componentContext,parent)=>{
     component["parent"]=parent;
     let props={};
     octItem.attributes.forEach(attribute=>{
-        props={...props,...componentContext[attribute.value]}
+        props[attribute.key]=componentContext[attribute.value]
     });
     //执行getDefaultProps 生命周期方法（生命周期原理）
     component.getDefaultProps(props);

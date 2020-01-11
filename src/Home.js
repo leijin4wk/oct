@@ -4,7 +4,8 @@ export default class Home extends Component{
         super(props);
     }
     render() {
-        let {child}=this.props;
+        console.log(this.props);
+        let {child}=this.props.name;
         return function () {
             return {
                 context:{
