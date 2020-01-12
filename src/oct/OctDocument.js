@@ -1,4 +1,4 @@
-//这个类就还模拟虚拟dom的实现
+//这个类模拟虚拟dom的实现
 
 //himalaya  的作用是把html字符串转换成json
 import { parse } from 'himalaya'
